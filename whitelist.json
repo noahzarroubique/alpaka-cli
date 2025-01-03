@@ -1,0 +1,34 @@
+{
+    "apps": [
+        {
+            "id": 2,
+            "name": "Fluid",
+            "channel": "DEVELOP"
+        },
+        {
+            "id": 26,
+            "name": "MeteoSwiss",
+            "channel": "DEVELOP"
+        },
+        {
+            "id": 36,
+            "name": "SBB Main",
+            "channel": "DEVELOP"
+        },
+        {
+            "id": 37,
+            "name": "SBB Preview",
+            "channel": "DEVELOP"
+        },
+        {
+            "id": 39,
+            "name": "Swisstopo",
+            "channel": "DEVELOP"
+        },
+        {
+            "id": 64,
+            "name": "Phoenix",
+            "channel": "DEVELOP"
+        }
+    ]
+}
