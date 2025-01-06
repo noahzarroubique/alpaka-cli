@@ -1,3 +1,4 @@
-cd /home/noah/tools/alpaka-cli
+#!/usr/bin/env bash
+cd "$(dirname "$0")"
 source venv/bin/activate
 python main.py

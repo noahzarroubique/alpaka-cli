@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import subprocess
@@ -5,12 +6,13 @@ import time
 
 
 # check if already run today
-with open("last_run.json") as f:
-    last_run = json.load(f)["last_run"]
+if "last_run.json" in os.listdir():
+    with open("last_run.json") as f:
+        last_run = json.load(f)["last_run"]
 
-if time.gmtime(time.time()).tm_yday == time.gmtime(last_run).tm_yday:
-    print("Already run today")
-    exit()
+    if time.gmtime(time.time()).tm_yday == time.gmtime(last_run).tm_yday:
+        print("Already run today")
+        exit()
 
 
 # check if device is connected
@@ -24,6 +26,10 @@ if "device" not in capture_output.stdout.decode().replace("devices", ""):
 TOKEN_ENDPOINT = "https://ubidentity.ubique.ch/connect/token"
 
 # Refresh Token Parameters
+
+if "token.json" not in os.listdir():
+    print("No token.json file found. Exiting")
+    exit()
 
 with open("token.json") as f:
     refresh_token = json.load(f)["refresh_token"]
@@ -72,13 +78,20 @@ def download_and_install_apk(app_id: int, selected_channel: str):
 
     
 
+# get apps to install
+if "whitelist.json" not in os.listdir():
+    print("No whitelist.json file found. Exiting")
+    exit()
 
 with open("whitelist.json") as f:
     whitelist = json.load(f)
 
+current_app_index = 1
+number_of_apps = len(whitelist["apps"])
 for app in whitelist["apps"]:
-    print("Installing: ", app["name"])
+    print("Installing: ", app["name"],  "({}/{})".format(str(current_app_index), str(number_of_apps)))
     download_and_install_apk(app["id"], app["channel"])
+    current_app_index += 1
 
 
 # update last run
