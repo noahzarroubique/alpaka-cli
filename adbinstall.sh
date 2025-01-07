@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")"
 source venv/bin/activate
-python main.py
+date >> log.log
+python main.py >> log.log
