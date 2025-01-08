@@ -1,6 +1,8 @@
 # Alpaka Installer
 
 ### Installation
+Edit `adbinstall.sh` such that it adds the folder where adb is stored to the path. This is necessary if you want to use it with a cron job
+
 Create a virtual environment and activate it
 ```bash
 virtualenv venv

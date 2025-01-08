@@ -2,4 +2,5 @@
 cd "$(dirname "$0")"
 source venv/bin/activate
 date >> log.log
-python main.py >> log.log
+PATH=$PATH:/mnt/c/Users/noahz/AppData/Local/Android/Sdk/platform-tools
+python main.py >> log.log 2>&1

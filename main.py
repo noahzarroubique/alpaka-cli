@@ -98,3 +98,5 @@ for app in whitelist["apps"]:
 with open("last_run.json", "w") as f:
     last_run = time.time()
     json.dump({"last_run": last_run}, f)
+
+print("Done")
