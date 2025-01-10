@@ -1,6 +1,11 @@
 {
     "apps": [
         {
+            "id": 1,
+            "name": "Alpaka",
+            "channel": "DEVELOP"
+        },
+        {
             "id": 2,
             "name": "Fluid",
             "channel": "DEVELOP"
