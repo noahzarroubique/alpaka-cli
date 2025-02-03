@@ -63,6 +63,6 @@ It should be formatted as follows:
 Run `adbinstall.sh` periodically (e.g. with a cronjob `0 * * * * /home/noah/tools/alpaka-cli/adbinstall.sh`). It will only run once per day and try to install the newest builds in the corresponding channels of all apps in the `whitelist.json` file.
 
 ### Troubleshooting
-You might have to change `adb.exe` to `adb` in the `main.py` file. Logs are saved to the `log.log` file
+You might have to change `adb_path` from `adb.exe` to `adb` in the `main.py` file. Logs are saved to the `log.log` file
 
 There is no error handling

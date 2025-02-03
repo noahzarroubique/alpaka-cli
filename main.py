@@ -4,6 +4,7 @@ import json
 import subprocess
 import time
 
+adb_path = "adb.exe"
 
 # check if already run today
 if "last_run.json" in os.listdir():
@@ -16,7 +17,7 @@ if "last_run.json" in os.listdir():
 
 
 # check if device is connected
-capture_output = subprocess.run(["adb.exe", "devices"], capture_output=True)
+capture_output = subprocess.run([adb_path, "devices"], capture_output=True)
 
 if "device" not in capture_output.stdout.decode().replace("devices", ""):
     print("No device connected")
@@ -54,8 +55,6 @@ if response.status_code == 200:
 else:
     print("Failed to refresh token:", response.status_code, response.text)
 #"""
-
-adb_path = "adb.exe"
 
 def download_and_install_apk(app_id: int, selected_channel: str):
     builds = requests.get("https://linth-ws.ubique.ch/v1/apps/" + str(app_id), headers={"Authorization": f"Bearer {token}"})
