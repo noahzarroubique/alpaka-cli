@@ -11,13 +11,18 @@
             "channel": "DEVELOP"
         },
         {
-            "id": 26,
-            "name": "MeteoSwiss",
+            "id": 6,
+            "name": "Post Preview",
             "channel": "DEVELOP"
         },
         {
-            "id": 36,
-            "name": "SBB Main",
+            "id": 8,
+            "name": "ASVZ",
+            "channel": "DEVELOP" 
+        },
+        {
+            "id": 26,
+            "name": "MeteoSwiss",
             "channel": "DEVELOP"
         },
         {

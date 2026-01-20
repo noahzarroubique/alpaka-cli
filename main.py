@@ -71,7 +71,11 @@ def download_and_install_apk(app_id: int, selected_channel: str):
     with open("app.apk", "wb") as f:
         f.write(apk.content)
 
-    subprocess.run([adb_path, "install", "app.apk"], check=True)
+    try:
+        subprocess.run([adb_path, "install", "app.apk"], check=True)
+    except subprocess.CalledProcessError as e:
+        print("Failed to install APK:", e)
+        return
 
     print("Installed APK")
 

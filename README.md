@@ -30,6 +30,11 @@ It should be formatted as follows:
             "channel": "DEVELOP"
         },
         {
+            "id": 8,
+            "name": "ASVZ",
+            "channel": "DEVELOP" 
+        },
+        {
             "id": 26,
             "name": "MeteoSwiss",
             "channel": "DEVELOP"
